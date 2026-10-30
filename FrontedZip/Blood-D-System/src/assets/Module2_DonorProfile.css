@@ -1,0 +1,1227 @@
+/* ============================================================
+   BLOODLINK PRO — MODULE 2 CSS
+   Donor Profile & Health Management
+   SAVE AS: src/assets/Module2_DonorProfile.css
+   IMPORT IN DonorProfile.jsx: import "./assets/Module2_DonorProfile.css"
+   ============================================================ */
+
+/* ============================================================
+   PROFILE PAGE LAYOUT
+   ============================================================ */
+
+.profile-page {
+  padding: 0;
+}
+
+/* ✅ PROFILE HERO BANNER */
+.profile-hero-banner {
+  background: linear-gradient(135deg, #c0392b 0%, #7b241c 60%, #1a1a2e 100%);
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-hero-banner::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.profile-hero-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 40%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.profile-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ LARGE AVATAR */
+.profile-avatar-large {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  font-family: "Nunito", sans-serif;
+  backdrop-filter: blur(4px);
+}
+
+.profile-hero-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 6px;
+  font-family: "Nunito", sans-serif;
+}
+
+.profile-hero-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.profile-hero-chip {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.profile-hero-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* ✅ COMPLETENESS RING */
+.completeness-ring {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  backdrop-filter: blur(4px);
+}
+
+.completeness-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: conic-gradient(#27ae60 var(--pct), rgba(255,255,255,0.2) 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.completeness-circle::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(30, 30, 60, 0.7);
+}
+
+.completeness-pct {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+}
+
+.completeness-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.completeness-sublabel {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+}
+
+/* ============================================================
+   TAB NAVIGATION
+   ============================================================ */
+
+.profile-tabs {
+  display: flex;
+  gap: 6px;
+  background: white;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+}
+
+.dark .profile-tabs {
+  background: #1e1e1e;
+}
+
+.profile-tab-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #7f8c8d;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+}
+
+.profile-tab-btn:hover {
+  background: #f5f5f5;
+  color: #2c3e50;
+}
+
+.dark .profile-tab-btn:hover {
+  background: #2a2a2a;
+  color: #ecf0f1;
+}
+
+.profile-tab-btn.active {
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  color: white;
+  box-shadow: 0 4px 14px rgba(192, 57, 43, 0.35);
+}
+
+/* ============================================================
+   PROFILE VIEW (Tab 1)
+   ============================================================ */
+
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .profile-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-section-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dark .profile-section-card {
+  background: #1e1e1e;
+  color: #ecf0f1;
+}
+
+.profile-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.dark .profile-section-header {
+  border-bottom-color: #2a2a2a;
+}
+
+.profile-section-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #c0392b22, #c0392b11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c0392b;
+}
+
+.profile-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.dark .profile-section-title {
+  color: #ecf0f1;
+}
+
+.profile-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+  gap: 12px;
+}
+
+.dark .profile-field-row {
+  border-bottom-color: #2a2a2a;
+}
+
+.profile-field-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.profile-field-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.profile-field-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: right;
+}
+
+.dark .profile-field-value {
+  color: #ecf0f1;
+}
+
+.profile-field-value.blood-tag {
+  background: #c0392b;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.profile-field-value.eligible-tag {
+  background: #eafaf1;
+  color: #27ae60;
+  border: 1px solid #27ae60;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profile-field-value.ineligible-tag {
+  background: #fdedec;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   EDIT PROFILE (Tab 2 — Wizard)
+   ============================================================ */
+
+.edit-wizard {
+  background: white;
+  border-radius: 14px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dark .edit-wizard {
+  background: #1e1e1e;
+}
+
+/* ✅ WIZARD STEP INDICATOR */
+.wizard-steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 0;
+}
+
+.wizard-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.wizard-step-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #eee;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #aaa;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.dark .wizard-step-dot {
+  background: #333;
+  border-color: #444;
+  color: #666;
+}
+
+.wizard-step-dot.active {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.4);
+}
+
+.wizard-step-dot.done {
+  background: #27ae60;
+  border-color: #27ae60;
+  color: white;
+}
+
+.wizard-step-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+.wizard-step-label.active {
+  color: #c0392b;
+}
+
+.wizard-step-label.done {
+  color: #27ae60;
+}
+
+.wizard-step-line {
+  flex: 1;
+  height: 2px;
+  background: #eee;
+  margin: 0 8px;
+}
+
+.dark .wizard-step-line {
+  background: #333;
+}
+
+.wizard-step-line.done {
+  background: #27ae60;
+}
+
+/* ✅ FORM SECTION TITLE */
+.form-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dark .form-section-title {
+  color: #ecf0f1;
+}
+
+/* ✅ EDIT FORM GRID */
+.edit-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .edit-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.edit-form-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .edit-form-grid.three-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.edit-form-grid.full {
+  grid-template-columns: 1fr;
+}
+
+/* ✅ INPUT GROUP */
+.edit-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.dark .edit-input-group label {
+  color: #aaa;
+}
+
+.edit-input-wrap {
+  position: relative;
+}
+
+.edit-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.edit-input-wrap input,
+.edit-input-wrap select,
+.edit-input-wrap textarea {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  color: #2c3e50;
+  background: white;
+  transition: 0.2s;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.dark .edit-input-wrap input,
+.dark .edit-input-wrap select,
+.dark .edit-input-wrap textarea {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #ecf0f1;
+}
+
+.edit-input-wrap input:focus,
+.edit-input-wrap select:focus,
+.edit-input-wrap textarea:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+.edit-input-wrap textarea {
+  resize: vertical;
+  min-height: 80px;
+  padding-top: 10px;
+}
+
+/* ✅ BLOOD GROUP SELECTOR */
+.blood-group-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.blood-group-btn {
+  padding: 9px 6px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
+  font-family: "Nunito", sans-serif;
+}
+
+.dark .blood-group-btn {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #ecf0f1;
+}
+
+.blood-group-btn:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.blood-group-btn.selected {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: white;
+  box-shadow: 0 3px 10px rgba(192, 57, 43, 0.35);
+}
+
+/* ✅ WIZARD NAVIGATION BUTTONS */
+.wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #eee;
+}
+
+.dark .wizard-nav {
+  border-top-color: #333;
+}
+
+.wizard-btn-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Nunito", sans-serif;
+}
+
+.dark .wizard-btn-back {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #aaa;
+}
+
+.wizard-btn-back:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.wizard-btn-next {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Nunito", sans-serif;
+}
+
+.wizard-btn-next:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(192, 57, 43, 0.35);
+}
+
+.wizard-btn-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================================
+   MEDICAL HISTORY (Tab 3)
+   ============================================================ */
+
+.medical-section {
+  background: white;
+  border-radius: 14px;
+  padding: 24px 26px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.dark .medical-section {
+  background: #1e1e1e;
+  color: #ecf0f1;
+}
+
+.medical-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.dark .medical-section-header {
+  border-bottom-color: #2a2a2a;
+}
+
+.medical-section-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ CHECKBOX GRID */
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .condition-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.condition-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+.dark .condition-check-item {
+  background: #252525;
+  border-color: #444;
+}
+
+.condition-check-item:hover {
+  border-color: #c0392b;
+  background: #fff5f5;
+}
+
+.dark .condition-check-item:hover {
+  background: #2e1a1a;
+}
+
+.condition-check-item.selected {
+  border-color: #c0392b;
+  background: #fdedec;
+}
+
+.dark .condition-check-item.selected {
+  background: #2e1a1a;
+}
+
+.condition-check-box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: 0.15s;
+}
+
+.condition-check-item.selected .condition-check-box {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: white;
+}
+
+.condition-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.dark .condition-label {
+  color: #ccc;
+}
+
+/* ✅ TEXTAREA FIELDS */
+.medical-textarea-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  .medical-textarea-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+.medical-textarea-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.medical-textarea-item label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.dark .medical-textarea-item label {
+  color: #aaa;
+}
+
+.medical-textarea-item textarea {
+  padding: 10px 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  color: #2c3e50;
+  background: white;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.dark .medical-textarea-item textarea {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #ecf0f1;
+}
+
+.medical-textarea-item textarea:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+/* ✅ SAVE MEDICAL BUTTON */
+.medical-save-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.2s;
+  font-family: "Nunito", sans-serif;
+  margin-top: 20px;
+}
+
+.medical-save-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(192, 57, 43, 0.35);
+}
+
+/* ============================================================
+   DONATION HISTORY (Tab 4)
+   ============================================================ */
+
+.donation-history-empty {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dark .donation-history-empty {
+  background: #1e1e1e;
+}
+
+.donation-history-empty svg {
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+.donation-history-table-wrap {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dark .donation-history-table-wrap {
+  background: #1e1e1e;
+}
+
+/* ============================================================
+   DONOR ID CARD (Tab 5)
+   ============================================================ */
+
+.id-card-container {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ✅ THE ACTUAL CARD */
+.donor-id-card {
+  width: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.id-card-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #c0392b 100%);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.id-card-logo-text {
+  color: white;
+}
+
+.id-card-logo-text h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.id-card-logo-text span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.id-card-body {
+  background: white;
+  padding: 20px;
+}
+
+.id-card-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.id-card-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.id-card-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 4px;
+}
+
+.id-card-role-tag {
+  background: #c0392b22;
+  color: #c0392b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.id-card-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 12px 0;
+}
+
+.id-card-detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.id-card-detail-label {
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.id-card-detail-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.id-card-detail-value.blood {
+  color: #c0392b;
+  font-size: 16px;
+}
+
+.id-card-footer {
+  background: #f9f9f9;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id-card-cert-no {
+  font-size: 11px;
+  color: #999;
+  font-family: "Courier New", monospace;
+}
+
+.id-card-valid {
+  font-size: 11px;
+  font-weight: 700;
+  color: #27ae60;
+  background: #eafaf1;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ✅ QR PLACEHOLDER */
+.id-card-qr {
+  width: 64px;
+  height: 64px;
+  background: #1a1a2e;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* ✅ ID CARD ACTIONS */
+.id-card-actions {
+  flex: 1;
+  min-width: 200px;
+}
+
+.id-card-actions h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 14px;
+}
+
+.dark .id-card-actions h3 {
+  color: #ecf0f1;
+}
+
+.id-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  font-family: "Nunito", sans-serif;
+}
+
+.id-action-btn.primary {
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  color: white;
+}
+
+.id-action-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(192, 57, 43, 0.35);
+}
+
+.id-action-btn.secondary {
+  background: #f5f5f5;
+  color: #2c3e50;
+  border: 1px solid #e0e0e0;
+}
+
+.dark .id-action-btn.secondary {
+  background: #252525;
+  color: #ecf0f1;
+  border-color: #444;
+}
+
+.id-action-btn.secondary:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+/* ✅ CARD INFO NOTE */
+.id-card-info-note {
+  background: #eafaf1;
+  border: 1px solid #27ae60;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #1e8449;
+  margin-top: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   ELIGIBILITY CHECKER (inline)
+   ============================================================ */
+
+.eligibility-detail-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.dark .eligibility-detail-card {
+  background: #1e1e1e;
+}
+
+.elig-check-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 14px;
+}
+
+.dark .elig-check-row {
+  border-bottom-color: #2a2a2a;
+}
+
+.elig-check-row:last-child {
+  border-bottom: none;
+}
+
+.elig-icon-pass {
+  color: #27ae60;
+  flex-shrink: 0;
+}
+
+.elig-icon-fail {
+  color: #e74c3c;
+  flex-shrink: 0;
+}
+
+.elig-icon-warn {
+  color: #e67e22;
+  flex-shrink: 0;
+}
+
+.elig-check-label {
+  font-weight: 600;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.dark .elig-check-label {
+  color: #ecf0f1;
+}
+
+.elig-check-detail {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .profile-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-hero-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .completeness-ring {
+    width: 100%;
+  }
+
+  .profile-tabs {
+    gap: 4px;
+  }
+
+  .profile-tab-btn {
+    min-width: 80px;
+    font-size: 12px;
+    padding: 9px 10px;
+    gap: 4px;
+  }
+
+  .id-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .donor-id-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}

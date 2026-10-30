@@ -1,0 +1,1246 @@
+/* ============================================================
+   BLOODLINK PRO — MODULE 6 CSS
+   Donation Camp Management
+   SAVE AS: src/assets/Module6_CampManagement.css
+   IMPORT IN CampManagement.jsx
+   ============================================================ */
+
+/* ============================================================
+   CAMP PAGE HERO BANNER
+   ============================================================ */
+
+.camp-hero-banner {
+  background: linear-gradient(135deg, #c0392b 0%, #7b241c 55%, #1a1a2e 100%);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.camp-hero-banner::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.camp-hero-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 38%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.camp-hero-left {
+  position: relative;
+  z-index: 1;
+}
+
+.camp-hero-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 6px;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.camp-hero-subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.camp-hero-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.camp-hero-stat {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  min-width: 80px;
+}
+
+.camp-hero-stat-num {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  display: block;
+  font-family: "Nunito", sans-serif;
+}
+
+.camp-hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   TAB NAVIGATION
+   ============================================================ */
+
+.camp-tabs {
+  display: flex;
+  gap: 6px;
+  background: white;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  flex-wrap: wrap;
+}
+
+.dark .camp-tabs {
+  background: #1e1e1e;
+}
+
+.camp-tab-btn {
+  flex: 1;
+  min-width: 110px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #7f8c8d;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+  white-space: nowrap;
+}
+
+.camp-tab-btn:hover {
+  background: #f5f5f5;
+  color: #2c3e50;
+}
+
+.dark .camp-tab-btn:hover {
+  background: #2a2a2a;
+  color: #ecf0f1;
+}
+
+.camp-tab-btn.active {
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  color: white;
+  box-shadow: 0 4px 14px rgba(192,57,43,0.35);
+}
+
+/* ============================================================
+   KPI STATS GRID
+   ============================================================ */
+
+.camp-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 1100px) {
+  .camp-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .camp-kpi-grid { grid-template-columns: 1fr; }
+}
+
+.camp-kpi-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease;
+}
+
+.camp-kpi-card:hover {
+  transform: translateY(-2px);
+}
+
+.dark .camp-kpi-card {
+  background: #1e1e1e;
+}
+
+.camp-kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.camp-kpi-icon.blue   { background: #ebf5fb; color: #2980b9; }
+.camp-kpi-icon.green  { background: #eafaf1; color: #27ae60; }
+.camp-kpi-icon.orange { background: #fef9e7; color: #e67e22; }
+.camp-kpi-icon.red    { background: #fdedec; color: #c0392b; }
+.camp-kpi-icon.purple { background: #f5eef8; color: #8e44ad; }
+
+.camp-kpi-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: #2c3e50;
+  display: block;
+  font-family: "Nunito", sans-serif;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.dark .camp-kpi-num {
+  color: #ecf0f1;
+}
+
+.camp-kpi-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+/* ============================================================
+   GENERAL CARD
+   ============================================================ */
+
+.camp-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+
+.dark .camp-card {
+  background: #1e1e1e;
+}
+
+.camp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f5f5f5;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dark .camp-card-header {
+  border-bottom-color: #2a2a2a;
+}
+
+.camp-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dark .camp-card-title {
+  color: #ecf0f1;
+}
+
+/* ============================================================
+   CAMP GRID CARDS (Browse Camps / Overview)
+   ============================================================ */
+
+.camps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.camp-item-card {
+  background: white;
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.camp-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-color: #c0392b22;
+}
+
+.dark .camp-item-card {
+  background: #1e1e1e;
+}
+
+.camp-item-header {
+  padding: 16px 18px 12px;
+  background: linear-gradient(135deg, #c0392b11, #c0392b05);
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dark .camp-item-header {
+  border-bottom-color: #2a2a2a;
+  background: linear-gradient(135deg, #c0392b22, #c0392b10);
+}
+
+.camp-item-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 4px;
+  font-family: "Nunito", sans-serif;
+}
+
+.dark .camp-item-name {
+  color: #ecf0f1;
+}
+
+.camp-item-city {
+  font-size: 12px;
+  color: #7f8c8d;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.camp-item-body {
+  padding: 14px 18px;
+}
+
+.camp-item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+}
+
+.dark .camp-item-row {
+  color: #aaa;
+}
+
+.camp-item-row svg {
+  color: #c0392b;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+
+.camp-item-footer {
+  padding: 12px 18px;
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dark .camp-item-footer {
+  background: #252525;
+  border-top-color: #2a2a2a;
+}
+
+/* ============================================================
+   CAPACITY BAR
+   ============================================================ */
+
+.capacity-bar-wrap {
+  flex: 1;
+  min-width: 120px;
+}
+
+.capacity-bar-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.capacity-bar-track {
+  height: 6px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dark .capacity-bar-track {
+  background: #333;
+}
+
+.capacity-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.capacity-bar-fill.green  { background: #27ae60; }
+.capacity-bar-fill.orange { background: #e67e22; }
+.capacity-bar-fill.red    { background: #e74c3c; }
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.camp-status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.camp-status-badge.UPCOMING          { background: #ebf5fb; color: #2980b9; }
+.camp-status-badge.REGISTRATION_OPEN { background: #eafaf1; color: #27ae60; }
+.camp-status-badge.ONGOING           { background: #fef9e7; color: #e67e22; }
+.camp-status-badge.COMPLETED         { background: #f5eef8; color: #8e44ad; }
+.camp-status-badge.CANCELLED         { background: #fdedec; color: #c0392b; }
+
+.reg-status-badge {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.reg-status-badge.REGISTERED  { background: #ebf5fb; color: #2980b9; }
+.reg-status-badge.CHECKED_IN  { background: #eafaf1; color: #27ae60; }
+.reg-status-badge.DONATED     { background: #f5eef8; color: #8e44ad; }
+.reg-status-badge.NO_SHOW     { background: #fef5e4; color: #e67e22; }
+.reg-status-badge.CANCELLED   { background: #fdedec; color: #c0392b; }
+.reg-status-badge.WAITLISTED  { background: #f5f5f5; color: #7f8c8d; }
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+
+.btn-primary {
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(192,57,43,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(192,57,43,0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: #c0392b;
+  border: 2px solid #c0392b;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #fdedec;
+}
+
+.dark .btn-secondary {
+  background: transparent;
+  color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(39,174,96,0.3);
+}
+
+.btn-danger {
+  background: #fdedec;
+  color: #c0392b;
+  border: 1px solid #c0392b44;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+  color: white;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-icon:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+}
+
+.dark .btn-icon {
+  border-color: #333;
+  color: #aaa;
+}
+
+.dark .btn-icon:hover {
+  background: #2a2a2a;
+}
+
+/* ============================================================
+   FORM STYLES
+   ============================================================ */
+
+.camp-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .camp-form-grid { grid-template-columns: 1fr; }
+}
+
+.camp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.camp-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.camp-form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.dark .camp-form-label {
+  color: #ecf0f1;
+}
+
+.camp-form-input,
+.camp-form-select,
+.camp-form-textarea {
+  padding: 10px 14px;
+  border: 2px solid #e8e8e8;
+  border-radius: 9px;
+  font-size: 14px;
+  color: #2c3e50;
+  background: white;
+  transition: border-color 0.2s ease;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+}
+
+.camp-form-input:focus,
+.camp-form-select:focus,
+.camp-form-textarea:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.08);
+}
+
+.dark .camp-form-input,
+.dark .camp-form-select,
+.dark .camp-form-textarea {
+  background: #252525;
+  border-color: #333;
+  color: #ecf0f1;
+}
+
+.dark .camp-form-input:focus,
+.dark .camp-form-select:focus,
+.dark .camp-form-textarea:focus {
+  border-color: #c0392b;
+}
+
+.camp-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.camp-form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   TABLE STYLES
+   ============================================================ */
+
+.camp-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.camp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.camp-table thead th {
+  background: #f8f9fa;
+  color: #7f8c8d;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dark .camp-table thead th {
+  background: #252525;
+  color: #7f8c8d;
+}
+
+.camp-table tbody tr {
+  border-bottom: 1px solid #f5f5f5;
+  transition: background 0.15s ease;
+}
+
+.dark .camp-table tbody tr {
+  border-bottom-color: #2a2a2a;
+}
+
+.camp-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.dark .camp-table tbody tr:hover {
+  background: #252525;
+}
+
+.camp-table tbody td {
+  padding: 12px 14px;
+  color: #2c3e50;
+  vertical-align: middle;
+}
+
+.dark .camp-table tbody td {
+  color: #ecf0f1;
+}
+
+/* ============================================================
+   SEARCH / FILTER BAR
+   ============================================================ */
+
+.camp-filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.camp-search-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 9px 14px 9px 36px;
+  border: 2px solid #e8e8e8;
+  border-radius: 9px;
+  font-size: 13px;
+  color: #2c3e50;
+  background: white;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.camp-search-input:focus {
+  border-color: #c0392b;
+}
+
+.dark .camp-search-input {
+  background: #252525;
+  border-color: #333;
+  color: #ecf0f1;
+}
+
+.camp-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+
+.camp-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.camp-filter-select {
+  padding: 9px 14px;
+  border: 2px solid #e8e8e8;
+  border-radius: 9px;
+  font-size: 13px;
+  color: #2c3e50;
+  background: white;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.camp-filter-select:focus {
+  border-color: #c0392b;
+}
+
+.dark .camp-filter-select {
+  background: #252525;
+  border-color: #333;
+  color: #ecf0f1;
+}
+
+/* ============================================================
+   QR CODE DISPLAY
+   ============================================================ */
+
+.qr-box {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.dark .qr-box {
+  background: #252525;
+  border-color: #333;
+}
+
+.qr-hash-display {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  word-break: break-all;
+  text-align: center;
+}
+
+.dark .qr-hash-display {
+  background: #1a1a1a;
+  border-color: #333;
+  color: #ecf0f1;
+}
+
+/* ============================================================
+   MY REGISTRATION CARD (Donor view)
+   ============================================================ */
+
+.my-reg-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: start;
+  transition: transform 0.2s ease;
+  margin-bottom: 14px;
+}
+
+.my-reg-card:hover {
+  transform: translateY(-2px);
+}
+
+.dark .my-reg-card {
+  background: #1e1e1e;
+}
+
+.my-reg-camp-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 6px;
+  font-family: "Nunito", sans-serif;
+}
+
+.dark .my-reg-camp-name {
+  color: #ecf0f1;
+}
+
+.my-reg-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.my-reg-info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.my-reg-info-item svg {
+  color: #c0392b;
+  font-size: 12px;
+}
+
+/* ============================================================
+   CHECK-IN INTERFACE
+   ============================================================ */
+
+.checkin-search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.checkin-search-box input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dark .checkin-search-box input {
+  background: #252525;
+  border-color: #333;
+  color: #ecf0f1;
+}
+
+.checkin-search-box input:focus {
+  border-color: #c0392b;
+}
+
+.checkin-result-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #eee;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  transition: border-color 0.2s;
+}
+
+.dark .checkin-result-card {
+  background: #1e1e1e;
+  border-color: #2a2a2a;
+}
+
+.checkin-result-card.eligible {
+  border-color: #27ae60;
+}
+
+.checkin-result-card.ineligible {
+  border-color: #e74c3c;
+}
+
+.checkin-donor-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 4px;
+  font-family: "Nunito", sans-serif;
+}
+
+.dark .checkin-donor-info h4 {
+  color: #ecf0f1;
+}
+
+.checkin-donor-info p {
+  font-size: 13px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.checkin-eligibility-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.checkin-eligibility-tag.eligible {
+  background: #eafaf1;
+  color: #27ae60;
+}
+
+.checkin-eligibility-tag.ineligible {
+  background: #fdedec;
+  color: #c0392b;
+}
+
+/* ============================================================
+   DONATION ENTRY MODAL / FORM
+   ============================================================ */
+
+.post-donation-form {
+  background: #fafafa;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 12px;
+}
+
+.dark .post-donation-form {
+  background: #252525;
+  border-color: #333;
+}
+
+.post-donation-form h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 12px;
+}
+
+.dark .post-donation-form h5 {
+  color: #ecf0f1;
+}
+
+/* ============================================================
+   CAMP REPORT
+   ============================================================ */
+
+.report-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 700px) {
+  .report-summary-grid { grid-template-columns: 1fr; }
+}
+
+.report-stat-box {
+  background: white;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.dark .report-stat-box {
+  background: #1e1e1e;
+}
+
+.report-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #c0392b;
+  font-family: "Nunito", sans-serif;
+  display: block;
+}
+
+.report-stat-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.camp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+.camp-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 30px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.dark .camp-modal {
+  background: #1e1e1e;
+}
+
+.camp-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.dark .camp-modal-header {
+  border-bottom-color: #2a2a2a;
+}
+
+.camp-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #2c3e50;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.dark .camp-modal-title {
+  color: #ecf0f1;
+}
+
+.camp-modal-close {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.dark .camp-modal-close {
+  background: #2a2a2a;
+  color: #aaa;
+}
+
+.camp-modal-close:hover {
+  background: #fdedec;
+  color: #c0392b;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.camp-empty {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.camp-empty-icon {
+  font-size: 52px;
+  margin-bottom: 14px;
+  opacity: 0.4;
+}
+
+.camp-empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px;
+}
+
+.dark .camp-empty-title {
+  color: #ecf0f1;
+}
+
+.camp-empty-sub {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin: 0 0 18px;
+}
+
+/* ============================================================
+   ALERT INELIGIBLE
+   ============================================================ */
+
+.ineligible-banner {
+  background: #fdedec;
+  border: 1px solid #e74c3c44;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #c0392b;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ============================================================
+   RESPONSIVENESS EXTRAS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .camp-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .camp-hero-right {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .camp-tabs {
+    gap: 4px;
+  }
+
+  .camp-tab-btn {
+    min-width: 80px;
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+
+  .camp-modal {
+    padding: 22px 18px;
+  }
+}
+
+/* ============================================================
+   DARK MODE PAGE BACKGROUND
+   ============================================================ */
+
+.dark .camp-page-wrap {
+  background: #141414;
+}
